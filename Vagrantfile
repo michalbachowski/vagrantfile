@@ -61,7 +61,7 @@ Vagrant.configure("2") do |config|
   end
 
   # install ctags
-  config.vm.provision :shell, :inline => "apt-get install ctags"
+  config.vm.provision :shell, :inline => "test -x /usr/bin/apt-get && apt-get install ctags"
 
   # run pos install steps
   # config.vm.provision :shell, :inline => "/home/vagrant/postinstall.sh"
