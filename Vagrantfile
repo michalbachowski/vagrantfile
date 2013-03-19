@@ -29,7 +29,10 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "../", "/home/vagrant/app"
-  config.vm.synced_folder "~/.ssh", "/home/vagrant/.ssh"
+
+  # uncomment if you want to sync your local SSH keys
+  # WARNING: add "insecure_key.pub" to your authorized keys first!
+  # config.vm.synced_folder "~/.ssh", "/home/vagrant/.ssh"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
