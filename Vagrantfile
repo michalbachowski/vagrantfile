@@ -56,23 +56,12 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "python"
     chef.add_recipe "ruby_build"
     chef.add_recipe "vim"
-  
+ 
     #   # You may also specify custom JSON attributes:
     #   chef.json = { :mysql_password => "foo" }
   end
 
-  # added missing symlink
-  config.vm.provision :shell, :inline => "test ! -x /usr/bin/ruby && ln -s /opt/vagrant_ruby/bin/ruby /usr/bin/ruby; true"
-  # install ctags
-  config.vm.provision :shell, :inline => "test -x /usr/bin/apt-get && apt-get install ctags"
-
-  # run pos install steps
-  # config.vm.provision :shell, :inline => "/home/vagrant/postinstall.sh"
-
   # configure environment
-  config.vm.provision :shell, :inline => "su vagrant -c \"test ! -d ~/.termrc && git clone git://github.com/michalbachowski/termrc.git ~/.termrc && cd ~/.termrc && /bin/bash init.sh\""
-  
-  # configure vim
-  config.vm.provision :shell, :inline => "su vagrant -c \"test ! -d ~/.termrc && git clone git://github.com/michalbachowski/vimper.git ~/.vimper && cd ~/.vimper && python bootstrap.py\""
+  config.vm.provision :shell, :path => "shell.sh"
   
 end
