@@ -54,12 +54,15 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "nodejs::install_from_source"
     #chef.add_recipe "nodejs::npm"
     chef.add_recipe "python"
+    chef.add_recipe "ruby_build"
     chef.add_recipe "vim"
   
     #   # You may also specify custom JSON attributes:
     #   chef.json = { :mysql_password => "foo" }
   end
 
+  # added missing symlink
+  config.vm.provision :shell, :inline => "test ! -x /usr/bin/ruby && ln -s /opt/vagrant_ruby/bin/ruby /usr/bin/ruby; true"
   # install ctags
   config.vm.provision :shell, :inline => "test -x /usr/bin/apt-get && apt-get install ctags"
 
