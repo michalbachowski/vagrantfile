@@ -14,4 +14,7 @@ su vagrant -c 'test ! -d ~/.termrc && git clone git://github.com/michalbachowski
 # configure vim
 su vagrant -c 'test ! -d ~/.vimper && git clone git://github.com/michalbachowski/vimper.git ~/.vimper && cd ~/.vimper && python bootstrap.py'
 
+# git config
+su vagrant -c 'git config --global color.ui true'
+
 exit 0
