@@ -17,4 +17,12 @@ su vagrant -c 'test ! -d ~/.vimper && git clone git://github.com/michalbachowski
 # git config
 su vagrant -c 'git config --global color.ui true'
 
+## Node.js modules
+
+# Yeoman
+npm install -g yo grunt-cli bower 
+
+# underscore
+npm install -g underscore
+
 exit 0
