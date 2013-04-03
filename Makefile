@@ -1,6 +1,11 @@
 cookbooksDir='cookbooks'
+gitignorePath='../.gitignore'
+cookbooksDirForGitignore=$(shell basename $(CURDIR))"/"$(cookbooksDir)
 
-all: clean build 
+all: clean build
+
+ignore:
+	echo $(cookbooksDirForGitignore) >> $(gitignorePath)
 
 clean:
 	rm -rf $(cookbooksDir)
@@ -24,4 +29,4 @@ clone:
 	
 cookbooks: dir clone
 
-.PHONY: all clean cookbooks dir clone
+.PHONY: all clean cookbooks dir clone ignore
