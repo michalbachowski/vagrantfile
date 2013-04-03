@@ -5,7 +5,8 @@
 
 # install ctags
 if [ -x /usr/bin/apt-get ]; then
-    apt-get install ctags
+    # ctags
+    apt-get install exuberant-ctags 
 fi
 
 # configure environment
