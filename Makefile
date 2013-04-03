@@ -1,17 +1,3 @@
-cookbooks = \
-	redisio git://github.com/brianbianco/redisio.git \
-	nodejs git://github.com/mdxp/nodejs-cookbook.git \
-	git git://github.com/opscode-cookbooks/git.git \
-	build-essential git://github.com/opscode-cookbooks/build-essential.git \
-	apt git://github.com/opscode-cookbooks/apt.git \
-	python git://github.com/opscode-cookbooks/python.git \
-	dmg git://github.com/opscode-cookbooks/dmg.git \
-	runit git://github.com/opscode-cookbooks/runit.git \
-	yum git://github.com/opscode-cookbooks/yum.git \
-	windows git://github.com/opscode-cookbooks/windows.git \
-	vim git://github.com/opscode-cookbooks/vim.git \
-	ruby_build git://github.com/fnichol/chef-ruby_build.git 
-
 cookbooksDir='cookbooks'
 
 all: clean build 
