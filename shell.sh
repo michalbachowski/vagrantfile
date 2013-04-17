@@ -5,6 +5,8 @@
 
 # install ctags
 if [ -x /usr/bin/apt-get ]; then
+    # update
+    apt-get update
     # ctags
     apt-get install exuberant-ctags 
     # python3
