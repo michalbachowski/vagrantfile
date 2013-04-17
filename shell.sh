@@ -7,6 +7,16 @@
 if [ -x /usr/bin/apt-get ]; then
     # ctags
     apt-get install exuberant-ctags 
+    # python3
+    apt-get install python3.2
+fi
+
+# install ctags
+if [ -x /usr/local/bin/pip ]; then
+    # tox
+    pip install tox
+    # coverage
+    pip install coverage
 fi
 
 # configure environment
