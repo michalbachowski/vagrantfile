@@ -10,7 +10,7 @@ if [ -x /usr/bin/apt-get ]; then
     # ctags
     apt-get install exuberant-ctags 
     # python3
-    apt-get install python3.2
+    apt-get install python3.2 python3.2-minimal
 fi
 
 # install ctags
