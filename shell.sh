@@ -29,6 +29,7 @@ su vagrant -c 'test ! -d ~/.vimper && git clone git://github.com/michalbachowski
 
 # git config
 su vagrant -c 'git config --global color.ui true'
+su vagrant -c 'git config --global core.editor vim'
 
 ## Node.js modules
 
