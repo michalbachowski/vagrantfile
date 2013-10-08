@@ -13,7 +13,7 @@ if [ -x /usr/bin/apt-get ]; then
     apt-get install python3.2 python3.2-minimal
 fi
 
-# install ctags
+# install python packages via pip
 if [ -x /usr/local/bin/pip ]; then
     # tox
     pip install tox
