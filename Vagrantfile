@@ -51,6 +51,7 @@ Vagrant.configure("2") do |config|
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "apt"
     chef.add_recipe "git"
     chef.add_recipe "nodejs::install_from_source"
     chef.add_recipe "python"
