@@ -1,13 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
-  config.vm.box = "precise32"
-  
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-  config.vm.hostname = "zazu"
+  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box_version = "2.3.4"
 
-  config.berkshelf.enabled = true
+  config.vm.hostname = "example.host"
+
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
@@ -21,7 +20,7 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   # config.vm.network :public_network
-  
+
   # SSH key
   # config.ssh.private_key_path = "~/.ssh/id_rsa"
 
@@ -46,23 +45,7 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding
-  # some recipes and/or roles.
-  #
-  config.vm.provision :chef_solo do |chef|
-    chef.add_recipe "apt"
-    chef.add_recipe "git"
-    chef.add_recipe "nodejs::install_from_source"
-    chef.add_recipe "python"
-    chef.add_recipe "ruby_build"
-    chef.add_recipe "vim"
- 
-    #   # You may also specify custom JSON attributes:
-    #   chef.json = { :mysql_password => "foo" }
-  end
-
   # configure environment
   config.vm.provision :shell, :path => "shell.sh"
-  
+
 end
